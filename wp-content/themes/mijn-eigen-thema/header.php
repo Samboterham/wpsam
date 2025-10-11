@@ -10,11 +10,16 @@
 
 <body>
     <header>
-        <h1><?php bloginfo('name'); ?></h1>
-        <p><?php bloginfo('description'); ?></p>
-        <nav>
-            <?php wp_nav_menu(array('theme_location' => 'hoofdmenu')); ?>
-        </nav>
+        <div class="header-content">
+            
+            <h1 class="title"><?php bloginfo('name'); ?></h1>
+            
+            <p><?php bloginfo('description'); ?></p>
+            <nav>
+                <?php wp_nav_menu(array('theme_location' => 'hoofdmenu')); ?>
+
+            </nav>
+        </div>
 
 
     </header>
