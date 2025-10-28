@@ -1,8 +1,13 @@
 <?php
 function mijn_thema_setup() {
     register_nav_menus(array(
-        'hoofdmenu' => __('Hoofdmenu')
+        'hoofdmenu' => __('Hoofdmenu'),
+        'body' => __('Body'),
+        'news' => __('Nieuws'),
+       
     ));
 }
 add_action('after_setup_theme', 'mijn_thema_setup');
+
+add_theme_support('post-thumbnails');
 

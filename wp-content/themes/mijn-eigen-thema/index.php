@@ -11,17 +11,44 @@
 <body>
     <?php get_header(); ?>
 
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/narutomain1.png'); ?>" alt="Naruto body img"
+        class="body-decor">
+
+    <div class="main-content">
+        <div class="text2">
+            <p>
+                CLICK THE CHARACTERS BUTTON TO LEARN ABOUT ALL THE NARUTO CHARACTERS!
+            </p>
+        </div>
+        <nav class="character-btn">
+            <?php wp_nav_menu(array('theme_location' => 'body')); ?>
+
+        </nav>
+
+        <div class="news-container">
+
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/narutomain2.png'); ?>"
+                alt="Naruto body img" class="body-decor1">
+
+            <div class="news-text">CLICK ON THE NEWS BUTTON TO VIEW ALL THE NEWS ABOUT NARUTO!<br>
+                <?php wp_nav_menu(array('theme_location' => 'news')); ?>
+                <div class="image3">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/naruto4.png'); ?>"
+                        alt="Naruto body img" class="body-decor2">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
     <div id="content">
         <?php
         if (have_posts()):
             while (have_posts()):
                 the_post();
                 ?>
-                <h2><?php the_title(); ?></h2>
-                <div><?php the_content(); ?></div>
-
-               
-
+                
                 <?php
             endwhile;
         else:

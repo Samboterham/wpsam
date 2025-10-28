@@ -8,54 +8,244 @@ Version: 1.0
 */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: rgba(244, 239, 216, 0.747);
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
 header {
-    background-color: #33ff00;
+    background-color: rgba(244, 239, 216, 0.747);
     color: white;
-    padding: 20px;
     text-align: center;
-}
-
-#content {
-    padding: 20px;
-    display: grid;
-    grid-auto-flow: column;
-    justify-items: start;
-    justify-content: center;
-    gap: 10px;
-
-
-}
-
-.header-content {
-    padding: 20px;
-    display: grid;
-    grid-auto-flow: column;
-    gap: 10px;
-    align-items: center;
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px;  
     bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.leesmeer {
-    color: #00ff3c;
-    font-size: 100px;
+
+/* main */
+
+.body-decor {
+    width: 100%;
+    margin-top: 2px;
+    border-radius: 10px;
 }
 
-.title{
-    color: #0015ff;
+.body-decor1 {
+    width: 50%;
+    margin-top: 0px;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+.image3 {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+
+.body-decor2 {
+    width: 58%;
+    margin-top: 0px;
+    border-radius: 20px;
+    padding: 0;
+    margin: 0;
+    box-shadow: #4088d2 -18px -18px 0 0;
+    padding-right: 10px;
+
+}
+
+
+
+#content {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: stretch;
+}
+
+.text2 {
+    font-family: 'Jaro', serif;
+    font-size: 40px;
+
+}
+
+.main-content {
+    padding: 0px;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-btn {
+    font-family: 'Jaro', serif;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 30px;
+    transition: 0.3s;
+    width: 50px;
+}
+
+.news-nav {}
+
+.text2 p {
+    padding-left: 20px;
+}
+
+/* header */
+
+.header-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 260px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 50px;
+    font-size: 25px;
+    justify-content: space-between;
+}
+
+
+.header-content .title,
+.header-content p {
+    margin: 0;
+}
+
+
+.title {
+    color: #000000;
+    font-family: 'Jaro', serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: clamp(250px, 12vw, 440px);
+    line-height: 0.95;
+    letter-spacing: 0.015em;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.header-info {
+    font-family: 'Jaro', serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header-info p {
+    margin: 0;
+}
+
+.header-info nav {
+    margin: 0;
+    display: flex;
+
+}
+
+.header-text {
+    font-family: 'Jaro', serif;
+    color: #000000;
+    padding-top: 30px;
+
+}
+
+.header-decor {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.header-line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #000;
+    /* thin black line */
+    margin: 10px 0;
+    /* space above/below */
+}
+
+header nav .menu {
+    display: flex;
+}
+
+header nav .menu li {
+    margin: 0 30px;
+}
+
+.news-container {
+    display: flex;
+}
+
+.news-text {
+    font-family: 'Jaro', serif;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+/* 
+.menu li a {
+    color: black;
+    background-color: #ffffff;
+    padding: 5px;
+    transition: 0.3s;
+    border-radius: 10px;
+    border-style: solid;
+    width: 100%;
+
+}
+
+.menu li a:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    font-size: 40px;
+} */
+
+
+
+/* footer */
+
+.footer-text{
+     font-family: 'Jaro', serif;
+     font-size: 50px;
+}
+
+
+
+/* responsive */
+
+@media (max-width: 900px) {
+    .title {
+        color: #000000;
+        font-family: 'Jaro', serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: clamp(150px, 12vw, 260px);
+        line-height: 0.95;
+        letter-spacing: 0.015em;
+        -webkit-font-smoothing: antialiased;
+    }
 }

@@ -11,26 +11,20 @@
 <body>
     <?php get_header(); ?>
     <div id="content">
+
         <?php
         if (have_posts()):
             while (have_posts()):
                 the_post();
                 ?>
-                <h2><?php the_title(); ?></h2>
-                <div><?php the_content(); ?></div>
+                <div>
+                    <h2><?php the_title(); ?></h2>
+                    <img <?php the_post_thumbnail(); ?> 
+                    <h3><a href="<?php the_permalink(); ?>">Lees meer</a></h3>
+                </div>
                 <?php
-                if (get_field('githublink')) {
-                    echo '<p>githublink: ' . get_field('githublink') . '</p>';
-                }
-                if (get_field('email')) {
-                    echo '<p>email: ' . get_field('email') . '</p>';
-                }
-                if (get_field('gebruikte-code')) {
-                    echo '<p>gebruikte-code: ' . get_field('gebruikte-code') . '</p>';
-                }
-                 if (get_field('link-naar-live')) {
-                    echo '<p>link-naar-live: ' . get_field('link-naar-live') . '</p>';
-                }
+
+
                 ?>
 
                 <?php
