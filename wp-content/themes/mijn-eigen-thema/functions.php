@@ -3,7 +3,7 @@ function mijn_thema_setup() {
     register_nav_menus(array(
         'hoofdmenu' => __('Hoofdmenu'),
         'body' => __('Body'),
-        'news' => __('Nieuws'),
+        'news' => __('News'),
        
     ));
 }

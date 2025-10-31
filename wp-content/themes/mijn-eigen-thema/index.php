@@ -21,8 +21,8 @@
             </p>
         </div>
         <nav class="character-btn">
-            <?php wp_nav_menu(array('theme_location' => 'body')); ?>
-
+            <a class="btn-chr"
+                href="<?php echo esc_url(get_post_type_archive_link('character') ?: home_url('/characters/')); ?>">Characters</a>
         </nav>
 
         <div class="news-container">
@@ -31,7 +31,9 @@
                 alt="Naruto body img" class="body-decor1">
 
             <div class="news-text">CLICK ON THE NEWS BUTTON TO VIEW ALL THE NEWS ABOUT NARUTO!<br>
-                <?php wp_nav_menu(array('theme_location' => 'news')); ?>
+                <a class="news-btn"
+                    href="<?php echo esc_url(get_post_type_archive_link('news') ?: home_url('/news/')); ?>">News</a>
+                </nav>
                 <div class="image3">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/naruto4.png'); ?>"
                         alt="Naruto body img" class="body-decor2">
@@ -48,7 +50,7 @@
             while (have_posts()):
                 the_post();
                 ?>
-                
+
                 <?php
             endwhile;
         else:

@@ -1,0 +1,311 @@
+<?php
+/**
+ * Plugin Name: Header Plugin
+ * Description: Adds custom CSS styles.
+ * Version: 1.0
+ * Author: Sam
+ * License: GPL2
+ */
+
+// Function to enqueue custom CSS
+function my_header_plugin_styles() {
+    wp_register_style('my-header-plugin-style', false);
+    wp_enqueue_style('my-header-plugin-style');
+    $custom_css ="
+
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(244, 239, 216, 0.747);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    header {
+        background-color: rgba(244, 239, 216, 0.747);
+        color: white;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    /* main */
+
+    .body-decor {
+        width: 100%;
+        margin-top: 2px;
+        border-radius: 10px;
+    }
+
+    .body-decor1 {
+        width: 50%;
+        margin-top: 0px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .chr-img {
+        border-radius: 10px;
+    }
+
+    .btn-chr {
+        color: rgb(255, 102, 0);
+        text-shadow: #ff00007e 3px 3px 3px;
+        font-size: 40px;
+
+
+    }
+
+    .news-btn {
+
+        color: rgb(255, 102, 0);
+        text-shadow: #ff00007e 3px 3px 3px;
+
+    }
+
+
+
+    .chr-body {
+        display: flex;
+    }
+
+    .character-container {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .character-info {
+        flex: 1;
+    }
+
+    .character-backstory {
+        flex: 1;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .chr-img img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: rgb(0, 0, 0) 10px 10px 3px;
+    }
+
+    .image3 {
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    .body-decor2 {
+        width: 58%;
+        margin-top: 0px;
+        border-radius: 20px;
+        padding: 0;
+        margin: 0;
+        box-shadow: rgb(255, 102, 0) -18px -18px 0 0;
+        padding-right: 10px;
+
+    }
+
+
+
+    #content {
+        padding: 20px;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        justify-items: stretch;
+    }
+
+    .text2 {
+        font-family: 'Jaro', serif;
+        font-size: 40px;
+
+    }
+
+    .main-content {
+        padding: 0px;
+        margin-top: -30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .character-btn {
+        font-family: 'Jaro', serif;
+        border-radius: 25px;
+        padding: 10px;
+        font-size: 30px;
+        transition: 0.3s;
+        width: 50px;
+    }
+
+    .text2 p {
+        padding-left: 20px;
+    }
+
+    /* header */
+
+    .header-content {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 260px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-left: 50px;
+        font-size: 25px;
+        justify-content: space-between;
+    }
+
+
+    .header-content .title,
+    .header-content p {
+        margin: 0;
+    }
+
+
+    .title {
+        color: #000000;
+        font-family: 'Jaro', serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: clamp(250px, 12vw, 440px);
+        line-height: 0.95;
+        letter-spacing: 0.015em;
+        -webkit-font-smoothing: antialiased;
+    }
+
+
+    .header-info {
+        font-family: 'Jaro', serif;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .header-info p {
+        margin: 0;
+    }
+
+    .header-info nav {
+        margin: 0;
+        display: flex;
+
+    }
+
+    .header-text {
+        font-family: 'Jaro', serif;
+        color: #000000;
+        padding-top: 30px;
+
+    }
+
+    .header-decor {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .header-line {
+        width: 100%;
+        border: none;
+        border-top: 1px solid #000;
+        /* thin black line */
+        margin: 10px 0;
+        /* space above/below */
+    }
+
+    header nav .menu {
+        display: flex;
+    }
+
+    header nav .menu li {
+        margin: 0 30px;
+    }
+
+    .news-container {
+        display: flex;
+    }
+
+    .news-text {
+        font-family: 'Jaro', serif;
+        font-size: 60px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+
+    /* 
+.menu li a {
+    color: black;
+    background-color: #ffffff;
+    padding: 5px;
+    transition: 0.3s;
+    border-radius: 10px;
+    border-style: solid;
+    width: 100%;
+
+}
+
+.menu li a:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    font-size: 40px;
+} */
+
+
+
+    /* footer */
+
+    .footer-text {
+        font-family: 'Jaro', serif;
+        font-size: 50px;
+    }
+
+
+
+    /* responsive */
+
+    @media (max-width: 900px) {
+        .title {
+            color: #000000;
+            font-family: 'Jaro', serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: clamp(150px, 12vw, 260px);
+            line-height: 0.95;
+            letter-spacing: 0.015em;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+
+
+    /* add all your other CSS here */
+    ";
+ wp_add_inline_style('my-header-plugin-style', $custom_css);
+}
+
+add_action('wp_enqueue_scripts', 'my_header_plugin_styles');

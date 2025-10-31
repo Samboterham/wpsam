@@ -19,7 +19,7 @@
                 ?>
                 <div>
                     <h2><?php the_title(); ?></h2>
-                    <img <?php the_post_thumbnail(); ?> 
+                    <img class="chr-img" <?php the_post_thumbnail(); ?> 
                     <h3><a href="<?php the_permalink(); ?>">Lees meer</a></h3>
                 </div>
                 <?php
